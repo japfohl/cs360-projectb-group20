@@ -1,7 +1,9 @@
 /*  
 ** Author: Collin James, CS 361
 ** Date: 2/26/17
-** Description: Database test
+** Description: Database test; run the following in mysql to create OR reset:
+sudo mysql
+source Test.sql;
 */
 
 set foreign_key_checks = 0; -- force drop
@@ -18,5 +20,6 @@ CREATE TABLE IF NOT EXISTS products (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- -- test product
-INSERT INTO product(name, photo_url) 
-VALUES ('Flowtron BK-15D Electronic Insect Killer, 1/2 Acre Coverage','http://ecx.images-amazon.com/images/I/715ZROmiT0L._SY550_.jpg');
+INSERT INTO products(name, photo_url) 
+VALUES ('Pocky Biscuit Stick 5 Flavor Variety Pack (Pack of 5)','https://images-na.ssl-images-amazon.com/images/I/71QzLsqscXL._SX522_.jpg'),
+('Wedderspoon 100% Raw Premium Manuka Honey KFactor 16+, 17.6 oz','https://images-na.ssl-images-amazon.com/images/I/61vlQw5CTIL._SY679_.jpg');
