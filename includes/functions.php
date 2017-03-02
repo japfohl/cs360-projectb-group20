@@ -13,7 +13,7 @@
     	if(!isset($database)) // create new db connection if one does not already exist
     	{
     			//connect to database
-    			$database = new mysqli($servername, $username,$password, $database, $dbport);
+    			$database = new mysqli($servername, $username, $password, $database, $dbport);
     
     			if($database->connect_errno)
     			{
