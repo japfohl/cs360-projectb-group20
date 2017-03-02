@@ -1,6 +1,7 @@
 <?php
-    include '../includes/mysqli.php';
-    
+    require("../includes/config.php");
+    $db = dbConnect();
+
     $sql = "SELECT p.name as p_name, p.photo_url, p.realcost, m.name as m_name
             FROM products p
             INNER JOIN manufacturers m ON m.man_id = p.manufacturer;";
