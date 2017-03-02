@@ -7,8 +7,6 @@
         $password = "";
         $database = "c9";
         $dbport = 3306;
-    
-    	static $database;
     	
     	if(!isset($database)) // create new db connection if one does not already exist
     	{
@@ -18,6 +16,10 @@
     			if($database->connect_errno)
     			{
     				printf("Connect failed: " . $database->connect_error);
+    			}
+    			else
+    			{
+    			    printf("Connection success!");
     			}
     	}
     	

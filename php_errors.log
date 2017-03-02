@@ -10,3 +10,84 @@
 [02-Mar-2017 02:34:19 UTC] PHP Stack trace:
 [02-Mar-2017 02:34:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/home.php:0
 [02-Mar-2017 02:34:19 UTC] PHP   2. render() /home/ubuntu/workspace/public/home.php:3
+[02-Mar-2017 03:26:50 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:26:50 UTC] PHP Stack trace:
+[02-Mar-2017 03:26:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:26:50 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:26:50 UTC] PHP Stack trace:
+[02-Mar-2017 03:26:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:26:50 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 12
+[02-Mar-2017 03:26:50 UTC] PHP Stack trace:
+[02-Mar-2017 03:26:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:27:00 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:27:00 UTC] PHP Stack trace:
+[02-Mar-2017 03:27:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:27:00 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:27:00 UTC] PHP Stack trace:
+[02-Mar-2017 03:27:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:27:00 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 12
+[02-Mar-2017 03:27:00 UTC] PHP Stack trace:
+[02-Mar-2017 03:27:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:28:53 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:28:53 UTC] PHP Stack trace:
+[02-Mar-2017 03:28:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:28:53 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:28:53 UTC] PHP Stack trace:
+[02-Mar-2017 03:28:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:28:53 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 12
+[02-Mar-2017 03:28:53 UTC] PHP Stack trace:
+[02-Mar-2017 03:28:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:29:23 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:29:23 UTC] PHP Stack trace:
+[02-Mar-2017 03:29:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:29:23 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:29:23 UTC] PHP Stack trace:
+[02-Mar-2017 03:29:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:29:23 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 12
+[02-Mar-2017 03:29:23 UTC] PHP Stack trace:
+[02-Mar-2017 03:29:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:31:24 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:31:24 UTC] PHP Stack trace:
+[02-Mar-2017 03:31:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:31:24 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/public/getresults.php on line 9
+[02-Mar-2017 03:31:24 UTC] PHP Stack trace:
+[02-Mar-2017 03:31:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:31:24 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 12
+[02-Mar-2017 03:31:24 UTC] PHP Stack trace:
+[02-Mar-2017 03:31:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:32:25 UTC] PHP Fatal error:  Call to undefined function prepare() in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:32:25 UTC] PHP Stack trace:
+[02-Mar-2017 03:32:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:32:37 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:32:37 UTC] PHP Stack trace:
+[02-Mar-2017 03:32:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:34:22 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:34:22 UTC] PHP Stack trace:
+[02-Mar-2017 03:34:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:34:24 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:34:24 UTC] PHP Stack trace:
+[02-Mar-2017 03:34:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:34:44 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:34:44 UTC] PHP Stack trace:
+[02-Mar-2017 03:34:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:34:46 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:34:46 UTC] PHP Stack trace:
+[02-Mar-2017 03:34:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:34:47 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:34:47 UTC] PHP Stack trace:
+[02-Mar-2017 03:34:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:38:21 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:38:21 UTC] PHP Stack trace:
+[02-Mar-2017 03:38:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:38:40 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 7
+[02-Mar-2017 03:38:40 UTC] PHP Stack trace:
+[02-Mar-2017 03:38:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:56:15 UTC] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/ubuntu/workspace/public/getresults.php on line 10
+[02-Mar-2017 03:57:01 UTC] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/ubuntu/workspace/public/getresults.php on line 10
+[02-Mar-2017 03:57:06 UTC] PHP Parse error:  syntax error, unexpected '$r' (T_VARIABLE) in /home/ubuntu/workspace/public/getresults.php on line 10
+[02-Mar-2017 03:57:26 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 11
+[02-Mar-2017 03:57:26 UTC] PHP Stack trace:
+[02-Mar-2017 03:57:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
+[02-Mar-2017 03:59:03 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/ubuntu/workspace/public/getresults.php on line 10
+[02-Mar-2017 03:59:03 UTC] PHP Stack trace:
+[02-Mar-2017 03:59:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/getresults.php:0
