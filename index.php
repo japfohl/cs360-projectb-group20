@@ -1,4 +1,4 @@
 <?php
     require("./includes/config.php");
-    redirect("./public/landing.php"); // redirect when user access folder directly
+    redirect("./public/home.php"); // redirect when user access folder directly
 ?>

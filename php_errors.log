@@ -1,0 +1,12 @@
+[02-Mar-2017 02:33:58 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/includes/functions.php on line 48
+[02-Mar-2017 02:33:58 UTC] PHP Stack trace:
+[02-Mar-2017 02:33:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/home.php:0
+[02-Mar-2017 02:33:58 UTC] PHP   2. render() /home/ubuntu/workspace/public/home.php:3
+[02-Mar-2017 02:34:19 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/includes/functions.php on line 48
+[02-Mar-2017 02:34:19 UTC] PHP Stack trace:
+[02-Mar-2017 02:34:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/home.php:0
+[02-Mar-2017 02:34:19 UTC] PHP   2. render() /home/ubuntu/workspace/public/home.php:3
+[02-Mar-2017 02:34:19 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/includes/functions.php on line 48
+[02-Mar-2017 02:34:19 UTC] PHP Stack trace:
+[02-Mar-2017 02:34:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/public/home.php:0
+[02-Mar-2017 02:34:19 UTC] PHP   2. render() /home/ubuntu/workspace/public/home.php:3

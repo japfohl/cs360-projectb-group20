@@ -2,17 +2,18 @@
 
     function dbConnect()
     {
-    	$servername = "127.0.0.1";
-    	$username = "root";
-    	$password = "root";
-    	$db = "recipes";
+    	$servername = getenv('IP');
+        $username = getenv('C9_USER');
+        $password = "";
+        $database = "c9";
+        $dbport = 3306;
     
     	static $database;
     	
     	if(!isset($database)) // create new db connection if one does not already exist
     	{
     			//connect to database
-    			$database = new mysqli($servername, $username, $password, $db);
+    			$database = new mysqli($servername, $username,$password, $database, $dbport);
     
     			if($database->connect_errno)
     			{
@@ -50,13 +51,12 @@
     		
     		//render template
     		require("../templates/$template");
-    
-    		//render footer
-    		require("../templates/footer.php");
     	}
     	else
     	{
     		trigger_error("Invalid template: $template", E_USER_ERROR);
     	}
     }
+    
+    // render("landing_form.php", ["title" =>"Welcome", "customCSS" => "landing.css", "customJS" => "landing.js"]);
 ?>
