@@ -1,4 +1,30 @@
 <?php
+
+    function dbConnect()
+    {
+    	$servername = getenv('IP');
+        $username = getenv('C9_USER');
+        $password = "";
+        $dbname = "c9";
+        $dbport = 3306;
+    
+    	static $database;
+    	
+    	if(!isset($database)) // create new db connection if one does not already exist
+    	{
+    			//connect to database
+    			$database = new mysqli($servername, $username, $password, $dbname, $dbport);
+    
+    			if($database->connect_errno)
+    			{
+    				printf("Connect failed: " . $database->connect_error);
+    			}
+    	}
+    	
+    	return $database;
+    }
+
+
     //redirect to a valid destination in the site
     function redirect($destination)
     {

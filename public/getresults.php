@@ -1,14 +1,11 @@
 <?php
-    require("../includes/config.php");
-
-    $db = dbConnect();
+    include '../includes/mysqli.php';
     
     $sql = "SELECT p.name as p_name, p.photo_url, p.realcost, m.name as m_name
             FROM products p
             INNER JOIN manufacturers m ON m.man_id = p.manufacturer;";
             
     $result = $db->query($sql);
-    $productInfo = $result->fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +14,14 @@
     <title>Test Page</title>
 </head>
 <body>
-    <?php foreach($productInfo as $p): ?>
-        <h1><?php echo $p["p_name"]; ?></h1>
-    <?php endforeach; ?>
+<?php while ($productInfo = $result->fetch_array(MYSQLI_ASSOC)) { ?>
+       
+       <h3><?php echo $productInfo['p_name']; ?></h3>
+       <img src="<?php echo $productInfo['photo_url']; ?>"></img>
+       <p>Name: <?php echo $productInfo['m_name']; ?></p>
+       <p>Price: <?php echo $productInfo['realcost']; ?></p>
+
+<?php } ?>
+
 </body>
 </html>
