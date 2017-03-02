@@ -10,7 +10,7 @@ set foreign_key_checks = 0; -- force drop
 DROP TABLE IF EXISTS `manufacturers_values`;
 DROP TABLE IF EXISTS `users_values`;
 DROP TABLE IF EXISTS `users`;
-DROP TABLE IF EXISTS `values`;
+DROP TABLE IF EXISTS `vals`;
 DROP TABLE IF EXISTS `products`;
 DROP TABLE IF EXISTS `manufacturers`;
 set foreign_key_checks = 1;
