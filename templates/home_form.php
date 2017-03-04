@@ -1,12 +1,16 @@
 <!-- Primary Page Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="container">
-<div class="row">
-  <div class="one-half column" style="margin-top: 25%">
-    <h4>Basic Page</h4>
-    <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-  </div>
-</div>
+  <form method="get" action="../public/getresults.php">
+    <div class="row">
+      <div class="nine columns">
+        <input class="u-full-width" type="search" name="prodname" id="searchbox" placeholder="search product name"/>
+      </div>
+      <div class="three columns">
+        <input class="u-full-width" type="submit" value="Submit"/>
+      </div>
+    </div>
+  </form>
 </div>
 
 <!-- End Document
