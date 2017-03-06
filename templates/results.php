@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="six columns">
-                <a href="#" data-photo-id="<?php echo $p["pid"]; ?>">
+                <a href="#" data-photo-id="<?php echo $r["pid"]; ?>">
                     <img class="u-max-full-width" src="<?php echo $r["purl"]; ?>">
                 </a>
             </div>
