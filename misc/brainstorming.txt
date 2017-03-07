@@ -1,0 +1,82 @@
+// Step 5: Implement Unit Tests
+
+
+
+    TEST CASES FOR: index.php
+        
+        TEST CASE 1) 
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/index.php
+            PURPOSE: Test that index.php loads as expected without any errors or problems loading resources
+            EXPECTED RESULTS: Page loads, displaying name of website, "welcome <user> text", and a search bar
+            which allows the user to enter in a search term.
+            
+        TEST CASE 2)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/index.php?prodName=barbie
+            PURPOSE: Test what our page does when we send it data that it doesn't need and can't use.
+            EXPECTED RESULT: Page will ignore data in GET request and perform same expected result as 
+            TEST CASE 1.
+            
+        TEST CASE 3) 
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io
+            PURPOSE: Test whether index.php loads by default without being explicitly included in the url.
+            EXPECTED RESULT: Same result as TEST CASE 1.
+            
+        TEST CASE 4) 
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/index.php (via POST)
+            EXTRA PARAMETERS: include the following search query in the POST body:
+                prodName=candy?manufacturerName=Pocky
+            PURPOSE: Ensure that our page isn't confused by POST requests and loads normally, ignoring
+            any data in the POST body.
+            EXPECTED RESULT: Same as TEST CASE 1.
+            
+    TEST CASES FOR: getresults.php
+    
+        NOTE: getresults.php accepts queries as GET requests, which it then processes, searches the DB for, and sends
+        the data along to the results.php page.
+    
+        TEST CASE 1)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php
+            PURPOSE: Ensure that when users access this page directly they are either redirected or receive and error
+            of some sort.
+            EXPECTED RESULT: User is redirected to index.php.
+            
+        TEST CASE 2)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php?prodName=refrigerator
+            PURPOSE: Ensure that the page handles GET requests and processes them correctly.
+            EXPECTED RESULT: Results are returned from the DB for the term "refrigerator" and then the user is 
+            directed to results.php where the results are displayed.
+            
+        TEST CASE 3)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php
+            EXTRA PARAMETERS: include the following query in the POST body:
+                 prodName=candy?manufacturerName=Pocky
+            PURPOSE: Ensure that the page doesn't try and handle post requests and that it is not confused by them.
+            EXPECTED RESULT: Redirect back to index.php
+            
+        TEST CASE 4)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php?prodName=refrigerator&otherThing=somethingElse
+            PURPOSE: Ensure the page only handles parameters in the GET request that it actually cares about.
+            EXPECTED RESULT: Results are returned from the DB for the term "refrigerator" and then the user is 
+            directed to results.php where the results are displayed.  All other terms sent in the URL are ignored.
+    
+    TEST CASES FOR results.php
+    
+        NOTE: results.php will be designed to accept search results from getresults.php and display them to the user.  On its
+        own it will not display anything of value to the user.
+    
+        TEST CASE 1)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/results.php
+            || URL: https://cs360-projectb-group20-pfohlj.c9users.io/results.php?prodName=refrigerator
+            || URL: https://cs360-projectb-group20-pfohlj.c9users.io/results.php (EXTRA PARAMETERS: in POST body prodName=candy?manufacturerName=Pocky)
+            PURPOSE: Ensure that user cannot access results.php directly without having submitted a search to getresults.php
+            EXPECTED RESULT: User redirected back to index.php.
+        
+        TEST CASE 2)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php?prodName=refrigerator
+            PURPOSE: Ensure that results recieved from getresults.php are displayed correctly.
+            EXPECTED RESULT: Page displays the product name, the product photo, the product's manufacturer, and the products price.
+            
+        TEST CASE 3)
+            URL: https://cs360-projectb-group20-pfohlj.c9users.io/getresults.php?prodName=cheese
+            PURPOSE: Ensure that when searches with no results display "no results" gracefully.
+            EXPECTED RESULT: Displays the message "No results found" and a link back to index.php

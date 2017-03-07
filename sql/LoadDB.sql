@@ -52,8 +52,7 @@ INSERT INTO products(name, manufacturer, realcost, photo_url) VALUES
     ("Side by Side Ice Dispense Refrigerator, 25 cubic feet, Stainless Steel, RS25H5121SRAA", (SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), 1596.60,"https://images-na.ssl-images-amazon.com/images/I/51xliwqf4NL._SL1000_.jpg"),
     ("Microwave, Over-The-Range Convection Microwave, 1.7 Cubic Feet, MC17F808KDT", (SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), 670.00,"https://images-na.ssl-images-amazon.com/images/I/81F54aoOIiL._SL1500_.jpg"),
     ("Microwave, Over-The-Range Microwave Oven, 2.2 Cubic Feet, Stainless Steel, LMHM2237ST", (SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), 390.00,"https://images-na.ssl-images-amazon.com/images/I/61U1veCsU%2BL._SL1248_.jpg"),
-    ("Phoenix 2 K371 Mobile 4g LTE GSM, 5-Inch HD, 16GB, Android", (SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), 70.00,"https://images-na.ssl-images-amazon.com/images/I/61Lw5c7TcoL._SL1000_.jpg")
- ;
+    ("Phoenix 2 K371 Mobile 4g LTE GSM, 5-Inch HD, 16GB, Android", (SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), 70.00,"https://images-na.ssl-images-amazon.com/images/I/61Lw5c7TcoL._SL1000_.jpg");
  
 INSERT INTO vals (name, copy) VALUES
     ("Fair Labor", "Company adheres to fair labor practices, living wage, safe conditions, and child labor standards"),
