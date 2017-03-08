@@ -73,12 +73,12 @@ INSERT INTO users_values (fk_user_id, fk_value_id) VALUES
     ((SELECT user_id FROM users u WHERE u.username = 'alcan'), (SELECT val_id FROM vals v WHERE v.name = 'Sustainable'));
     
 INSERT INTO manufacturers_values (fk_mfct_id, fk_value_id, cost) VALUES
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 20),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 10),
     ((SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), (SELECT val_id FROM vals v WHERE v.name = 'Sustainable'), 20),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 20),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 40),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'Sustainable'), 40),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 40),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Kenmore'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 2000),
-    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Kenmore'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 2000),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'LG'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 30),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 100),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'Sustainable'), 200),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Samsung'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 400),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Kenmore'), (SELECT val_id FROM vals v WHERE v.name = 'US'), 4000),
+    ((SELECT man_id FROM manufacturers m WHERE m.name = 'Kenmore'), (SELECT val_id FROM vals v WHERE v.name = 'Fair Labor'), 1000),
     ((SELECT man_id FROM manufacturers m WHERE m.name = 'Kenmore'), (SELECT val_id FROM vals v WHERE v.name = 'Sustainable'), 2000);

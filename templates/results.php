@@ -21,7 +21,13 @@
                 </div>
                 <div class="row">
                     <div class="twelve columns">
-                        <p><?php echo $r["pcost"]; ?></p>
+                        <p><?php echo "List price: " . $r["pcost"]; ?></p>
+                        <p><?php foreach ($r["cost"] as $key => $value ):
+                    
+                                echo "Cost of Value " . $key . ": " . $value . "<br>";
+                            
+                            endforeach; ?>
+                        </p>
                     </div>
                 </div>
             </div>
