@@ -37,7 +37,8 @@
                 "purl" => $purl,
                 "pcost" => $pcost,
                 "mname" => $mname,
-                "cost" => array()
+                "cost" => array(),
+                "vcost" => 0
             );
         }
         
@@ -58,7 +59,7 @@
 
         // Getting user values information
         $userID = 1; // Hardcoded
-        $uservalQuery = "SELECT fk_value_id FROM users_values WHERE fk_user_id = ?";
+        $uservalQuery = "SELECT uv.fk_value_id, v.name FROM users_values uv INNER JOIN vals v ON uv.fk_value_id = v.val_id WHERE uv.fk_user_id = ?";
         
         $stmt = $db->prepare($uservalQuery);
         $stmt->bind_param('i', $userID);
@@ -70,14 +71,15 @@
         }
         
         
-        $stmt->bind_result($uval);
+        $stmt->bind_result($uval, $vname);
         
         $userValues = array();
         
         while($stmt->fetch())
         {
             $userValues[] = array(
-                "uval" => $uval
+                "uval" => $uval,
+                "vname" => $vname
             );
         }
         
@@ -102,7 +104,7 @@
                                 WHERE m.name = ? AND mv.fk_value_id = ?";
                 if ($Debugging){  echo "costQuery is " . $costQuery . "<p>";}
                 $stmt = $db->prepare($costQuery);
-                $stmt->bind_param('sd', $r["mname"], $v);
+                $stmt->bind_param('sd', $r["mname"], $v["uval"]);
                 
                 if (!($stmt->execute()))
                 {
@@ -114,8 +116,23 @@
                 $stmt->close();
                 if ($Debugging){  echo "succeed with query for " . $v["uval"] . ", cost = " . $cost . "<p>"; }
                 
-                $r["cost"][(string)$v["uval"]] =  $cost;
+                $r["cost"][(string)$v["vname"]] = $cost;
             }
+            $r["vcost"] = $r["pcost"];
+            foreach ($r["cost"] as $key => $value ):
+                $r["vcost"] += $value;
+            endforeach;
+            
+        }
+
+        $vcostTemp = array();
+        foreach ($results as $ll):
+            array_push($vcostTemp, $ll["vcost"]);
+        endforeach;
+        
+        array_multisort($vcostTemp, SORT_ASC, SORT_NUMERIC, $results );
+        if ($Debugging) {
+            echo "134 sorted array ";  echo var_dump($results);
         }
         
         if ( $UnitTesting){
@@ -135,8 +152,14 @@
                 endforeach;
             endforeach;
         }
+        render("home_form.php", ["title" => "Search Results"]);
         
-        render("results.php", ["title" => "Search Results", "results" => $results]);
+        if (sizeof ($results) == 0 ) {
+            render("no_results.php", ["prodname" => $prodname]);
+        }
+        else {
+            render("results.php", ["title" => "Search Results", "results" => $results]);
+        }
     }
     else
     {

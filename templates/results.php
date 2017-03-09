@@ -4,29 +4,32 @@
     <?php foreach($results as $r): ?>
         <div class="row">
             <div class="twelve columns">
-                <h3><?php echo $r["pname"]; ?></h3>
+                <h5><?php echo $r["pname"] . " by " . $r["mname"]; ?></h5>
             </div>
         </div>
         <div class="row">
-            <div class="six columns">
+            <div class="three columns">
                 <a href="#" data-photo-id="<?php echo $r["pid"]; ?>">
-                    <img class="u-max-full-width" src="<?php echo $r["purl"]; ?>">
+                    <img class="u-max-full-width" width=200 src="<?php echo $r["purl"]; ?>">
                 </a>
             </div>
-            <div class="six columns">
+            <div class="three columns">
                 <div class="row">
                     <div class="twelve columns">
-                        <h5><?php echo $r["mname"]; ?></h5>
+                        <!-- <h5><?php echo $r["mname"]; ?></h5> -->
+                        <h5><?php echo "Values-based price:  <b>$" . $r["vcost"]; ?></h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="twelve columns">
-                        <p><?php echo "List price: " . $r["pcost"]; ?></p>
-                        <p><?php foreach ($r["cost"] as $key => $value ):
-                    
-                                echo "Cost of Value " . $key . ": " . $value . "<br>";
-                            
-                            endforeach; ?>
+                        <p><?php echo "List price:  <b>$" . $r["pcost"] . "</b>"; ?></p>
+                        <p><?php 
+                                //$fullcost = $r["pcost"];
+                                foreach ($r["cost"] as $key => $value ):
+                                    echo "Cost of " . $key . ":  <b>$" . $value . "</b><br>";
+                                    //$fullcost += $value;
+                                endforeach; 
+                            ?>
                         </p>
                     </div>
                 </div>
