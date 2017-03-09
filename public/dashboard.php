@@ -10,12 +10,13 @@
                 INNER JOIN users_values uv ON v.val_id = uv.fk_value_id
                 INNER JOIN users u ON uv.fk_user_id = u.user_id 
                 WHERE user_id = ?";
-        //echo $query;
+        
         $db = dbConnect();
         
         // get name from database
         $stmt = $db->prepare($namequery);
         $stmt->bind_param('i', $user_id);
+        
         if (!($stmt->execute()))
         {
             echo "Execution error!\n";
@@ -29,6 +30,7 @@
         // get values
         $stmt = $db->prepare($query);
         $stmt->bind_param('i', $user_id);
+        
         if (!($stmt->execute()))
         {
             echo "Execution error!\n";
@@ -51,7 +53,13 @@
         
         $stmt->close();
         
-        render("results.php", ["title" => "Search Results", "results" => $results]);
+        render("user_dashboard.php", [
+            "title" => "User Dashboard - $fname $lname", 
+            "fname" => $fname, 
+            "lname" => $lname, 
+            "uservals" => $uservals,
+            "user_id" => $user_id,
+            "customCSS" => "css/user_dashboard.css"]);
     }
     else
     {
