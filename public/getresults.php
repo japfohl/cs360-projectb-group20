@@ -155,7 +155,7 @@
             }
         }
         
-        render("results.php", ["title" => "Search Results", "prodname" => $prodname, "results" => $results]);
+        render("results.php", ["title" => "Search Results", "appname" => "Dollars and Sense", "prodname" => $prodname, "results" => $results]);
     }
     else
     {
