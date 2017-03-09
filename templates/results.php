@@ -17,17 +17,15 @@
                 <div class="row">
                     <div class="twelve columns">
                         <!-- <h5><?php echo $r["mname"]; ?></h5> -->
-                        <h5><?php echo "Values-based price:  <b>$" . $r["vcost"]; ?></h5>
+                        <h5><?php echo "Values-based price:  <b>$" . number_format($r["vcost"], 2); ?></h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="twelve columns">
-                        <p><?php echo "List price:  <b>$" . $r["pcost"] . "</b>"; ?></p>
+                        <p><?php echo "List price:  <b>$" . number_format($r["pcost"], 2) . "</b>"; ?></p>
                         <p><?php 
-                                //$fullcost = $r["pcost"];
                                 foreach ($r["cost"] as $key => $value ):
-                                    echo "Cost of " . $key . ":  <b>$" . $value . "</b><br>";
-                                    //$fullcost += $value;
+                                    echo "Cost of " . $key . ":  <b>$" . number_format($value, 2) . "</b><br>";
                                 endforeach; 
                             ?>
                         </p>
