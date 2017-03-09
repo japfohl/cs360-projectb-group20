@@ -3,20 +3,18 @@
     
     $UnitTesting = false;
     $Debugging = false;
-    
+
     if(isset($_GET["prodname"])) 
     {
-         
         $prodname = filter_input(INPUT_GET, "prodname", FILTER_SANITIZE_SPECIAL_CHARS);
-        $prodname = '%' . $prodname . '%';
+        $prepProdname = '%' . $prodname . '%';
         $prodQuery = "SELECT p.product_id, p.name, p.photo_url, p.realcost, m.name
                 FROM products p INNER JOIN manufacturers m ON m.man_id = p.manufacturer
                 WHERE p.name LIKE ?";
-        
         $db = dbConnect();
         
         $stmt = $db->prepare($prodQuery);
-        $stmt->bind_param('s', $prodname);
+        $stmt->bind_param('s', $prepProdname);
         
         if (!($stmt->execute()))
         {
@@ -116,19 +114,20 @@
                 $stmt->close();
                 if ($Debugging){  echo "succeed with query for " . $v["uval"] . ", cost = " . $cost . "<p>"; }
                 
-                $r["cost"][(string)$v["vname"]] = $cost;
+                $r["cost"][$v["vname"]] = $cost;
             }
             $r["vcost"] = $r["pcost"];
-            foreach ($r["cost"] as $key => $value ):
+            foreach ($r["cost"] as $key => $value)
+            {
                 $r["vcost"] += $value;
-            endforeach;
-            
+            }
         }
 
         $vcostTemp = array();
-        foreach ($results as $ll):
-            array_push($vcostTemp, $ll["vcost"]);
-        endforeach;
+        foreach ($results as $res)
+        {
+            array_push($vcostTemp, $res["vcost"]);
+        }
         
         array_multisort($vcostTemp, SORT_ASC, SORT_NUMERIC, $results );
         if ($Debugging) {
@@ -136,33 +135,31 @@
         }
         
         if ( $UnitTesting){
-            foreach ($results as $r):
+            foreach ($results as $r)
+            {
                 echo "147 array len of r[cost] = " . sizeof($r["cost"]) . "listing: " . var_dump($r) . "<br>";
-                foreach($r as $key => $value):
+                foreach($r as $key => $value)
+                {
                     if ($key == "cost") { 
                         echo "found a cost key, array len=" . sizeof($value).  ", ";
-                        foreach ($value as $k => $v):
+                        foreach ($value as $k => $v)
+                        {
                             echo "key: " . $k . "value: " . $v ."; ";
-                        endforeach;
+                        }
                         echo "<br>";
                     }
                     else {
                         echo "Key: " . $key . ", Value:" . $value ."\n<br>";
                     }
-                endforeach;
-            endforeach;
+                }
+            }
         }
-        render("home_form.php", ["title" => "Search Results"]);
         
-        if (sizeof ($results) == 0 ) {
-            render("no_results.php", ["prodname" => $prodname]);
-        }
-        else {
-            render("results.php", ["title" => "Search Results", "results" => $results]);
-        }
+        render("results.php", ["title" => "Search Results", "prodname" => $prodname, "results" => $results]);
     }
     else
     {
         redirect("home.php");
     }
+
 ?>
