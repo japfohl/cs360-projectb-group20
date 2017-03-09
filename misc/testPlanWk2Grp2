@@ -22,3 +22,5 @@ UI cases
 12. Confirm that the user's name is displayed correctly on the page
 13. Ensure that a button on the user interface triggers the mysql delete command
 14. Ensure that a button on the user interface triggers the mysql insert command
+
+
