@@ -1,4 +1,4 @@
 <?php
     require("../includes/config.php");
-    render("home_form.php", ["title" => "Dollars & Sense - Home"]);
+    render("home_form.php", ["title" => "Dollars & Sense - Home", "appname" => "Dollars and Sense"]);
 ?>
