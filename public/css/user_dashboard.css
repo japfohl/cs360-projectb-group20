@@ -19,7 +19,13 @@ body {
     padding-bottom: 1em;
 }
 
-a.button {
+.remove-button {
     background-color: rgb(208, 59, 59);
     color: white;
 }
+
+.add-button {
+    background-color: rgb(74, 175, 70);
+    color: white;
+}
+

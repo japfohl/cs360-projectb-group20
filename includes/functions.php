@@ -50,6 +50,9 @@
     		//render header
     		require("../templates/header.php");
     		
+    		//require navbar
+    		require("../templates/navbar.php");
+    		
     		//render template
     		require("../templates/$template");
     	}
