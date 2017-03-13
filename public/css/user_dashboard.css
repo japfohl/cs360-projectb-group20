@@ -1,0 +1,31 @@
+body {
+    padding-top: 5em;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.no-bottom-border {
+    border-bottom-style: none !important;
+}
+
+.value-name {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#welcome {
+    padding-bottom: 1em;
+}
+
+.remove-button {
+    background-color: rgb(208, 59, 59);
+    color: white;
+}
+
+.add-button {
+    background-color: rgb(74, 175, 70);
+    color: white;
+}
+

@@ -1,0 +1,26 @@
+Group 2: Joe, Collin, Carlos  Create a user account page that **show all the values**, 
+and **which ones the user has chosen**.  Also Group 2 will create some **UI niceness**: 
+a product title, padding, etc. Consider implementing the "Values Based Search Behavior" 
+user story. All development will be done on the assumption that User id=1 is logged in
+
+User Dashboard test ideas
+
+DB cases
+1. Confirm that user values are pulled from users-values/vals
+2. Confirm that all non-user-selected values are pulled from vals table
+3. Confirm that none of non-user-selected values are contained in the user-selected values
+4. Confirm that new values are inserted into the users-values table
+5. Confirm that deleted values are not present in the users-values table
+
+UI cases
+6. Confirm that when a user updates a value in any way, the UI reflects the change
+7. Confirm that the correct number of selected values are displayed on the page
+8. Confirm that the correct number of de-selected values are displayed on the page
+9. Confirm that when a user a hovers over value element, a copy display is triggered
+10. Confirm that the correct copy is displayed with values
+11. Confirm that the correct name of values is displayed
+12. Confirm that the user's name is displayed correctly on the page
+13. Ensure that a button on the user interface triggers the mysql delete command
+14. Ensure that a button on the user interface triggers the mysql insert command
+
+
