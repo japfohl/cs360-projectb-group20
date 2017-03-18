@@ -10,7 +10,7 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
-HOSTNAME="https://$C9_HOSTNAME"
+URL="https://$C9_HOSTNAME"
 
 mysql-ctl start
 service apache2 stop
@@ -23,10 +23,10 @@ if [ "$started" != "* apache2 is running"  ]; then
     echo -en "${COL_RED}There was a problem starting Apache. Please press 'Run Project'${COL_RESET}\n"
 fi
 
-wget -q --spider "${HOSTNAME}"
+wget -q --spider "${URL}"
 
 if [ $? -eq 0 ]; then
-    echo -en "Serving: ${COL_GREEN}${HOSTNAME}${COL_RESET}\n"
+    echo -en "Serving: ${COL_GREEN}${URL}${COL_RESET}\n"
 else
-    echo -en "${COL_RED}There was a problem serving ${HOSTNAME}. Please press 'Run Project'${COL_RESET}\n"
+    echo -en "${COL_RED}There was a problem serving ${URL}. Please press 'Run Project'${COL_RESET}\n"
 fi
