@@ -10,6 +10,8 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
+HOSTNAME="https://$C9_HOSTNAME"
+
 mysql-ctl start
 service apache2 stop
 service apache2 start
@@ -17,8 +19,14 @@ service apache2 start
 started=$(service apache2 status)
 started=$(tr -cd '[:print:]' <<< $started)
 
-if [ "$started" = "* apache2 is running"  ]; then
-    echo -en "Serving: ${COL_GREEN}https://$C9_HOSTNAME${COL_RESET}\n"
-else
+if [ "$started" != "* apache2 is running"  ]; then
     echo -en "${COL_RED}There was a problem starting Apache. Please press 'Run Project'${COL_RESET}\n"
+fi
+
+wget -q --spider "${HOSTNAME}"
+
+if [ $? -eq 0 ]; then
+    echo -en "Serving: ${COL_GREEN}${HOSTNAME}${COL_RESET}\n"
+else
+    echo -en "${COL_RED}There was a problem serving ${HOSTNAME}. Please press 'Run Project'${COL_RESET}\n"
 fi
