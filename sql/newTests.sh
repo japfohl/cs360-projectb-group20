@@ -3,7 +3,7 @@ sudo mysql -N -e 'create database c9_test;'
 sudo mysql c9_test -N -e 'source CreateDB.sql;'
 
 # Test that creation worked
-tables=`sudo mysql -N -e 'SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = "c9";'`
+tables=`sudo mysql -N -e 'SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = "c9_test";'`
 if [ ${tables} != 6 ]; then
     echo -n "Test FAILED, "
 else
