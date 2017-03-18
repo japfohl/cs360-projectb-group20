@@ -13,8 +13,12 @@ COL_CYAN=$ESC_SEQ"36;01m"
 mysql-ctl start
 service apache2 stop
 service apache2 start
-echo -en "Serving: ${COL_GREEN}https://$C9_HOSTNAME${COL_RESET}\n"
 
-# if [[ started  ]]; then
-#     #statements
-# fi
+started=$(service apache2 status)
+started=$(tr -cd '[:print:]' <<< $started)
+
+if [ "$started" = "* apache2 is running"  ]; then
+    echo -en "Serving: ${COL_GREEN}https://$C9_HOSTNAME${COL_RESET}\n"
+else
+    echo -en "${COL_RED}There was a problem starting Apache. Please press 'Run Project'${COL_RESET}\n"
+fi
