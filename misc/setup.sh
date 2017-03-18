@@ -11,7 +11,7 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
 URL="https://$C9_HOSTNAME"
-DB_PATH="$HOME/workspace/sql/"
+DB_PATH="$GOPATH/sql/"
 
 # start database and fill with data
 mysql-ctl start
