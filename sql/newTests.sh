@@ -1,6 +1,16 @@
 #!/bin/bash
 sudo mysql -N -e 'create database c9_test;'
 sudo mysql c9_test -N -e 'source CreateDB.sql;'
+
+# Test that creation worked
+tables=`sudo mysql -N -e 'SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = "c9";'`
+if [ ${tables} != 6 ]; then
+    echo -n "Test FAILED, "
+else
+    echo -n "   Creation succeeded, "
+fi
+echo "table count after insertion is "${tables}
+
 sudo mysql c9_test -N -e 'source LoadDB.sql;'
 # Delete test data just in case
 sudo mysql -N -e 'use c9_test; DELETE FROM products WHERE name LIKE "%Pocky%";'
