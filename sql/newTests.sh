@@ -1,6 +1,20 @@
 #!/bin/bash
+
+# create tables
 sudo mysql c9 -N -e 'source CreateDB.sql;'
+
+# Test that creation worked
+tables=`sudo mysql -N -e 'SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = "c9";'`
+if [ ${tables} != 6 ]; then
+    echo -n "Test FAILED, "
+else
+    echo -n "   Creation succeeded, "
+fi
+echo "table count after insertion is " ${tables}
+
+# load data
 sudo mysql c9 -N -e 'source LoadDB.sql;'
+
 # Delete test data just in case
 sudo mysql -N -e 'use c9; DELETE FROM products WHERE name LIKE "%Pocky%";'
 sudo mysql -N -e 'use c9; DELETE FROM products WHERE name LIKE "%Wedderspoon%";'
@@ -20,7 +34,6 @@ else
     echo -n "   Insertion succeeded, "
 fi
 echo "product count after insertion is " ${myVar2}
-
 
 myVar3=`sudo mysql -N -e 'use c9; SELECT * FROM products WHERE name LIKE "%Pocky%";'`
 if [ "${myVar3}x" = "x" ]; then
@@ -87,6 +100,7 @@ else
     echo -n "    ???  Values returned unexpected string: "
 fi
 echo "_"${clean}"_"
+
 # Test manufacturer
 
 
