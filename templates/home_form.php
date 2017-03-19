@@ -2,7 +2,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="section-top">
     <div class="container">
-        <h1><a href="../public/home.php"><?php echo $appname; ?></a></h1>
+        <h1 style="text-align: center;"><a href="../public/home.php"><?php echo $appname; ?></a></h1>
         <form method="get" action="../public/getresults.php">
         <div class="row">
             <div class="nine columns">
